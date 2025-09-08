@@ -1,65 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Level-Up</title>
-    <link rel="stylesheet" href="bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level-Up</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-  <div class="container-fluid">
-    <img src="Level-Up-Logo.png" alt="Imagen" width="50" height="40">
-    <a class="navbar-brand" href="#">Level-Up</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="index.html">Home
-            <span class="visually-hidden">(current)</span>
-          </a>
-        <li class="nav-item">
-          <a class="nav-link" href="productos.html">Productos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="nosotros.html">Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Blogs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contactos</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-sm-2" type="search" placeholder="Buscar">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
-      </form>
-      <a link href="carrito.html" target="_blank"></a>
-        <img src="carrito.png" alt="Carrito" width="30" height="24">
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <img src="Level-Up-Logo.png" alt="Imagen" width="50" height="40" class="me-2">
+      <a class="navbar-brand" href="#">Level-Up</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">
+              Home
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="productos.html">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="nosotros.html">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contactos</a>
+          </li>
+        </ul>
+        <form class="d-flex me-3">
+          <input class="form-control me-sm-2" type="search" placeholder="Buscar">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+        <a href="carrito.html" class="position-relative">
+          <img src="carrito.png" alt="Carrito" width="30" height="24">
+          <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="d-flex justify-content-end me-3 mt-2">
+    <ul class="nav nav-underline">
+      <li class="nav-item">
+        <a class="nav-link" href="login.html">Iniciar Sesión</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="registro.html">Registrarse</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="display-4">¡Bienvenido a Level-Up!</h1>
+        <img src="Level-Up-Logo.png" alt="Level-Up" class="img-fluid mt-3" style="max-width: 300px;">
+      </div>
     </div>
   </div>
-</nav>
-<div class="d-flex justify-content-end me-3 mt-2">
-    <ul class="nav nav-underline">
-    <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="login.html">Iniciar Sesión</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="registro.html">Registrarse</a>
-    </li>
-    </ul>
-</div>
-
-
-<table class="table table-hover d-flex justify-content-center">
-    <tr class="table-primary">
-      <p class="text-center">¡Bienvenido a Level-Up!.</p>
-      <td class="d-flex justify-content-end"><img src="Level-Up-Logo.png" alt="Level-Up"></td>
-    </tr>
-</table>
-<script src="bootstrap.bundle.min.js"></script>
+  <script src="bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
