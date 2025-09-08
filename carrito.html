@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Confirmar Compra</title>
+  <title>Level-Up</title>
   <link rel="stylesheet" href="bootstrap.min.css">
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
     <div class="container-fluid">
-      <img src="Level-Up-Logo.png" alt="Imagen" width="50" height="40">
+      <img src="Level-Up-Logo.png" alt="Imagen" width="50" height="40" class="me-2">
       <a class="navbar-brand" href="#">Level-Up</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
         aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,10 +38,191 @@
             <a class="nav-link" href="#">Contactos</a>
           </li>
         </ul>
+        <form class="d-flex me-3">
+          <input class="form-control me-sm-2" type="search" placeholder="Buscar">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+        <a href="carrito.html" class="position-relative">
+          <img src="carrito.png" alt="Carrito" width="30" height="24">
+          <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            style="display: none;">0</span>
+        </a>
       </div>
     </div>
   </nav>
 
+  <div class="d-flex justify-content-end me-3 mt-2">
+    <ul class="nav nav-underline">
+      <li class="nav-item">
+        <a class="nav-link" href="login.html">Iniciar Sesión</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="registro.html">Registrarse</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="mb-4">Carrito de Compras</h2>
+        <div id="cartEmpty" class="alert alert-info text-center d-none">
+          Tu carrito está vacío. <a href="productos.html" class="alert-link">¡Explora nuestros productos!</a>
+        </div>
+        <div id="cartContent">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead class="table-primary">
+                <tr>
+                  <th>Producto</th>
+                  <th>Precio</th>
+                  <th>Cantidad</th>
+                  <th>Total</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="cartItems">
+              </tbody>
+              <tfoot>
+                <tr class="table-light">
+                  <td colspan="3" class="text-end fw-bold">Total:</td>
+                  <td class="fw-bold" id="cartTotal">$0</td>
+                  <td></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <div class="row mt-4">
+            <div class="col-md-6">
+              <a href="productos.html" class="btn btn-outline-primary">
+                <i class="bi bi-arrow-left"></i> Seguir Comprando
+              </a>
+            </div>
+            <div class="col-md-6 text-end">
+              <button class="btn btn-danger me-2" id="clearCart">
+                Vaciar Carrito
+              </button>
+              <button class="btn btn-primary" id="checkoutBtn">
+                Proceder al Pago
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const cartItems = document.getElementById('cartItems');
+      const cartTotal = document.getElementById('cartTotal');
+      const cartEmpty = document.getElementById('cartEmpty');
+      const cartContent = document.getElementById('cartContent');
+      const clearCartBtn = document.getElementById('clearCart');
+      const checkoutBtn = document.getElementById('checkoutBtn');
+      const cartBadge = document.getElementById('cartBadge');
+
+      // Función para formatear precios en CLP
+      function formatPrice(price) {
+        return '$ ' + price.toLocaleString('es-CL');
+      }
+
+      // Función para actualizar el total del carrito
+      function updateCartTotal() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        cartTotal.textContent = formatPrice(total);
+        
+        // Actualizar badge del carrito
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        if (totalItems > 0) {
+          cartBadge.style.display = 'inline';
+          cartBadge.textContent = totalItems;
+        } else {
+          cartBadge.style.display = 'none';
+        }
+
+        // Mostrar/ocultar mensajes según el estado del carrito
+        if (cart.length === 0) {
+          cartEmpty.classList.remove('d-none');
+          cartContent.classList.add('d-none');
+        } else {
+          cartEmpty.classList.add('d-none');
+          cartContent.classList.remove('d-none');
+        }
+      }
+
+      // Función para actualizar la cantidad de un producto
+      function updateQuantity(productId, newQuantity) {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const item = cart.find(item => item.id === productId);
+        if (item) {
+          item.quantity = Math.max(1, newQuantity); // Asegurar que la cantidad no sea menor a 1
+          localStorage.setItem('cart', JSON.stringify(cart));
+          displayCart();
+        }
+      }
+
+      // Función para eliminar un producto del carrito
+      function removeFromCart(productId) {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const updatedCart = cart.filter(item => item.id !== productId);
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+        displayCart();
+      }
+
+      // Función para mostrar los items del carrito
+      function displayCart() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItems.innerHTML = cart.map(item => `
+          <tr>
+            <td>
+              <div class="d-flex align-items-center">
+                <img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px; object-fit: cover;" class="me-2">
+                <span>${item.name}</span>
+              </div>
+            </td>
+            <td>${formatPrice(item.price)}</td>
+            <td>
+              <div class="input-group" style="width: 120px">
+                <button class="btn btn-outline-secondary btn-sm" onclick="updateQuantity('${item.id}', ${item.quantity - 1})">-</button>
+                <input type="number" class="form-control form-control-sm text-center" value="${item.quantity}" 
+                       onchange="updateQuantity('${item.id}', parseInt(this.value))" min="1">
+                <button class="btn btn-outline-secondary btn-sm" onclick="updateQuantity('${item.id}', ${item.quantity + 1})">+</button>
+              </div>
+            </td>
+            <td>${formatPrice(item.price * item.quantity)}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" onclick="removeFromCart('${item.id}')">
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        `).join('');
+        updateCartTotal();
+      }
+
+      // Event Listeners
+      clearCartBtn.addEventListener('click', function() {
+        if (confirm('¿Estás seguro de que deseas vaciar el carrito?')) {
+          localStorage.setItem('cart', JSON.stringify([]));
+          displayCart();
+        }
+      });
+
+      checkoutBtn.addEventListener('click', function() {
+        alert('¡Gracias por tu compra! Esta función estará disponible pronto.');
+      });
+
+      // Hacer las funciones disponibles globalmente
+      window.updateQuantity = updateQuantity;
+      window.removeFromCart = removeFromCart;
+
+      // Mostrar el carrito al cargar la página
+      displayCart();
+    });
+  </script>
 </body>
 
 </html>

@@ -2,112 +2,293 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blogs</title>
-  <link rel="stylesheet" href="bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level-Up - Blog de Gaming</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        .blog-card {
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .featured-post {
+            position: relative;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .featured-post::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+        }
+
+        .featured-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .tag {
+            text-decoration: none;
+            color: #0d6efd;
+            background-color: #e7f1ff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .tag:hover {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .newsletter-section {
+            background-color: #f8f9fa;
+            border-radius: 1rem;
+        }
+    </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-    <div class="container-fluid">
-      <img src="Level-Up-Logo.png" alt="Imagen" width="50" height="40">
-      <a class="navbar-brand" href="#">Level-Up</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
-        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html">
-              Home
-              <span class="visually-hidden">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="productos.html">Productos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="nosotros.html">Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="blogs.html">Blogs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contactos</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-sm-2" type="search" placeholder="Buscar">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
-        </form>
-      </div>
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <img src="Level-Up-Logo.png" alt="Imagen" width="50" height="40" class="me-2">
+            <a class="navbar-brand" href="#">Level-Up</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blogs.html">
+                            Blogs
+                            <span class="visually-hidden">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contactos</a>
+                    </li>
+                </ul>
+                <form class="d-flex me-3">
+                    <input class="form-control me-sm-2" type="search" placeholder="Buscar en el blog">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+                </form>
+                <a href="carrito.html" class="position-relative">
+                    <img src="carrito.png" alt="Carrito" width="30" height="24">
+                    <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                        style="display: none;">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="featured-post mb-5" style="background-image: url('images/MouseLogitech.webp'); cursor: pointer;" onclick="location.href='blog-informacion.html?id=0'">
+        <div class="container h-100 d-flex align-items-end">
+            <div class="featured-content pb-4">
+                <span class="badge bg-primary mb-2">Reseña</span>
+                <h1 class="display-4">Análisis: Mouse Logitech G502 HERO</h1>
+                <p class="lead">Un vistazo profundo al popular mouse gaming de Logitech. ¿Vale la pena la inversión?</p>
+                <div class="d-flex align-items-center mt-3">
+                    <img src="images/autor-avatar.jpg" alt="John Doe" class="rounded-circle me-2" width="40" height="40">
+                    <div>
+                        <div>John Doe</div>
+                        <div class="text-light">7 Sept 2025</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </nav>
 
-  <div class="d-flex justify-content-end me-3 mt-2">
-    <ul class="nav nav-underline">
-      <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="login.html">Iniciar Sesión</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="registro.html">Registrarse</a>
-      </li>
-    </ul>
-  </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row" id="postsGrid">
+                </div>
+            </div>
 
-  <table class="table table-hover">
-    <tr class="table-primary">
-      <th scope="row">Primary</th>
-      <td><img src="Level-Up-Logo.png" alt="aaa"></td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-secondary">
-      <th scope="row">Secondary</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-success">
-      <th scope="row">Success</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-danger">
-      <th scope="row">Danger</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-warning">
-      <th scope="row">Warning</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-info">
-      <th scope="row">Info</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-light">
-      <th scope="row">Light</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-dark">
-      <th scope="row">Dark</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    </tbody>
-  </table>
+            <div class="col-lg-4">
+                <div class="card mb-4 bg-primary text-white">
+                    <div class="card-body">
+                        <h5 class="card-title text-white">Categorías</h5>
+                        <div id="categories">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="newsletter-section p-4 mb-4">
+                    <h5>Suscríbete a nuestro Newsletter</h5>
+                    <p class="text-muted">Recibe las últimas noticias y ofertas directamente en tu correo.</p>
+                    <form id="newsletterForm">
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Tu correo electrónico">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Suscribirse</button>
+                    </form>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Tags Populares</h5>
+                        <div id="popularTags">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="bootstrap.bundle.min.js"></script>
+    <script>
+        // Datos de ejemplo para los posts
+        const posts = [
+            {
+                id: 1,
+                title: "Los 5 Mejores Teclados Mecánicos de 2025",
+                excerpt: "Una guía completa de los teclados más destacados para gaming y productividad...",
+                image: "images/teclado-mecanico.jpg",
+                category: "Guías",
+                author: "John Doe",
+                date: "5 Sept 2025",
+                tags: ["Hardware", "Periféricos", "Gaming"]
+            },
+            {
+                id: 2,
+                title: "Cómo Optimizar tu PC para Gaming",
+                excerpt: "Tips esenciales para mejorar el rendimiento de tu computadora en juegos...",
+                image: "images/optimizacion-pc.jpg",
+                category: "Tutoriales",
+                author: "John Doe",
+                date: "3 Sept 2025",
+                tags: ["Optimización", "Gaming", "Rendimiento"]
+            },
+            {
+                id: 3,
+                title: "Review: Últimos Auriculares Gaming",
+                excerpt: "Comparativa de los auriculares más populares del mercado...",
+                image: "images/HyperXCloudII.webp",
+                category: "Reseñas",
+                author: "John Doe",
+                date: "1 Sept 2025",
+                tags: ["Audio", "Gaming", "Hardware"]
+            }
+        ];
+
+        // Categorías de ejemplo
+        const categories = [
+            { name: "Reseñas", count: 15 },
+            { name: "Tutoriales", count: 12 },
+            { name: "Guías", count: 8 },
+            { name: "Noticias", count: 20 },
+            { name: "Análisis", count: 10 }
+        ];
+
+        // Tags populares
+        const popularTags = [
+            "Gaming",
+            "Hardware",
+            "Periféricos",
+            "PC",
+            "Optimización",
+            "Rendimiento",
+            "Audio",
+            "Reseñas"
+        ];
+
+        // Cargar posts
+        function loadPosts() {
+            const postsGrid = document.getElementById('postsGrid');
+            posts.forEach(post => {
+                const postUrls = {
+                    1: 'blog-post-teclados.html',
+                    2: 'blog-post-optimizacion.html',
+                    3: 'blog-post-auriculares.html'
+                };
+                const postHtml = `
+                    <div class="col-md-6 mb-4">
+                        <div class="card blog-card h-100" onclick="location.href='${postUrls[post.id]}'">
+                            <img src="${post.image}" class="card-img-top" alt="${post.title}" style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <span class="badge bg-primary mb-2">${post.category}</span>
+                                <h5 class="card-title">${post.title}</h5>
+                                <p class="card-text">${post.excerpt}</p>
+                            </div>
+                            <div class="card-footer bg-transparent">
+                                <small class="text-muted">Por ${post.author} • ${post.date}</small>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                postsGrid.innerHTML += postHtml;
+            });
+        }
+
+        // Cargar categorías
+        function loadCategories() {
+            const categoriesDiv = document.getElementById('categories');
+            categories.forEach(category => {
+                categoriesDiv.innerHTML += `
+                    <a href="#" class="d-flex justify-content-between align-items-center text-decoration-none text-white mb-2">
+                        ${category.name}
+                        <span class="badge bg-white text-primary rounded-pill">${category.count}</span>
+                    </a>
+                `;
+            });
+        }
+
+        // Cargar tags populares
+        function loadTags() {
+            const tagsDiv = document.getElementById('popularTags');
+            popularTags.forEach(tag => {
+                tagsDiv.innerHTML += `<a href="#" class="tag">${tag}</a>`;
+            });
+        }
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPosts();
+            loadCategories();
+            loadTags();
+
+            // Actualizar badge del carrito
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const badge = document.getElementById('cartBadge');
+            if (badge && totalItems > 0) {
+                badge.style.display = 'inline';
+                badge.textContent = totalItems;
+            }
+
+            // Newsletter Form
+            document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('¡Gracias por suscribirte a nuestro newsletter!');
+            });
+        });
+    </script>
 </body>
 
 </html>

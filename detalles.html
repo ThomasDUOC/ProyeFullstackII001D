@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level-Up</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <img src="Level-Up-Logo.png" alt="Imagen" width="50" height="40" class="me-2">
+            <a class="navbar-brand" href="#">Level-Up</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            Home
+                            <span class="visually-hidden">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blogs.html">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contactos</a>
+                    </li>
+                </ul>
+                <form class="d-flex me-3">
+                    <input class="form-control me-sm-2" type="search" placeholder="Buscar">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+                </form>
+                <a href="carrito.html" class="position-relative">
+                    <img src="carrito.png" alt="Carrito" width="30" height="24">
+                    <span id="cartBadge"
+                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                        style="display: none;">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="d-flex justify-content-end me-3 mt-2">
+        <ul class="nav nav-underline">
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Iniciar Sesión</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="registro.html">Registrarse</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="productos.html">Productos</a></li>
+                <li class="breadcrumb-item active" aria-current="page" id="productCategory">Categoría</li>
+            </ol>
+        </nav>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <img id="mainProductImage" src="" alt="" class="card-img-top"
+                        style="object-fit: contain; height: 400px;">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center gap-2 mt-2">
+                            <button class="btn btn-outline-primary btn-sm thumbnail-btn active">
+                                <img src="" alt="" style="width: 50px; height: 50px; object-fit: cover;">
+                            </button>
+                            <button class="btn btn-outline-primary btn-sm thumbnail-btn">
+                                <img src="" alt="" style="width: 50px; height: 50px; object-fit: cover;">
+                            </button>
+                            <button class="btn btn-outline-primary btn-sm thumbnail-btn">
+                                <img src="" alt="" style="width: 50px; height: 50px; object-fit: cover;">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <h2 id="productName" class="mb-3"></h2>
+                <div class="mb-4">
+                    <span id="productPrice" class="h3 text-primary"></span>
+                    <div class="badge bg-success ms-2">Envío gratis</div>
+                </div>
+
+                <div class="mb-4">
+                    <h5>Descripción</h5>
+                    <p id="productDescription" class="text-muted"></p>
+                </div>
+
+                <div class="mb-4">
+                    <h5>Especificaciones</h5>
+                    <ul id="productSpecs" class="list-unstyled">
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <label for="quantity" class="form-label">Cantidad:</label>
+                    <div class="input-group" style="width: 150px;">
+                        <button class="btn btn-outline-secondary" type="button" id="decreaseQuantity">-</button>
+                        <input type="number" class="form-control text-center" id="quantity" value="1" min="1">
+                        <button class="btn btn-outline-secondary" type="button" id="increaseQuantity">+</button>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary btn-lg w-100 mb-3" id="addToCartBtn">
+                    Agregar al Carrito
+                </button>
+
+                <div class="accordion" id="productAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseDelivery">
+                                Información de Envío
+                            </button>
+                        </h2>
+                        <div id="collapseDelivery" class="accordion-collapse collapse show"
+                            data-bs-parent="#productAccordion">
+                            <div class="accordion-body">
+                                <ul class="list-unstyled">
+                                    <li>✓ Envío gratis a todo Chile</li>
+                                    <li>✓ Entrega estimada: 3-5 días hábiles</li>
+                                    <li>✓ Seguimiento en tiempo real</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseWarranty">
+                                Garantía
+                            </button>
+                        </h2>
+                        <div id="collapseWarranty" class="accordion-collapse collapse"
+                            data-bs-parent="#productAccordion">
+                            <div class="accordion-body">
+                                <ul class="list-unstyled">
+                                    <li>✓ Garantía de 12 meses</li>
+                                    <li>✓ 30 días para devoluciones</li>
+                                    <li>✓ Soporte técnico especializado</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <h3 class="mb-4">Productos Relacionados</h3>
+            <div class="row row-cols-1 row-cols-md-4 g-4" id="relatedProducts">
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+    <script src="bootstrap.bundle.min.js"></script>
+    <script>
+        // Datos de productos (mismos que en productos.html)
+        const products = [
+            {
+                id: 'JM001',
+                name: 'Catan',
+                price: 29990,
+                category: 'juegos-mesa',
+                categoryName: 'Juegos de Mesa',
+                image: 'images/Catan.webp',
+                description: 'Juego de mesa estratégico Catan. Construye, comercia y coloniza la isla.',
+                specs: [
+                    'Tiempo de juego: 60-120 minutos',
+                    'Jugadores: 3-4',
+                    'Edad recomendada: 10+',
+                    'Incluye: Tablero modular, fichas de recursos, cartas de desarrollo',
+                    'Idioma: Español'
+                ],
+                additionalImages: [
+                    'images/Catan.webp',
+                    'images/catan-gameplay.jpg',
+                    'images/catan-components.jpg'
+                ]
+            },
+            {
+                id: 'AC001',
+                name: 'Controlador Inalámbrico Xbox Series X',
+                price: 59990,
+                category: 'accesorios',
+                categoryName: 'Accesorios',
+                image: 'images/ControlXboxSeries.webp',
+                description: 'Control oficial para Xbox Series X/S con conexión inalámbrica.',
+                specs: [
+                    'Conexión: Bluetooth y Xbox Wireless',
+                    'Batería: 2 pilas AA (incluidas)',
+                    'Compatibilidad: Xbox Series X|S, Xbox One, Windows 10/11',
+                    'Jack de audio de 3.5mm',
+                    'Botón Share integrado'
+                ],
+                additionalImages: [
+                    'images/ControlXboxSeries.webp',
+                    'images/xbox-controller-back.jpg',
+                    'images/xbox-controller-side.jpg'
+                ]
+            }
+            // ... más productos con sus especificaciones
+        ];
+
+        // Función para formatear precios en CLP
+        function formatPrice(price) {
+            return '$ ' + price.toLocaleString('es-CL');
+        }
+
+        // Función para mostrar notificación
+        function showNotification(message, productImage) {
+            const toastContainer = document.querySelector('.toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `
+        <div class="toast-header">
+          <img src="${productImage}" class="rounded me-2" alt="" style="width: 20px; height: 20px; object-fit: cover;">
+          <strong class="me-auto">Level-Up</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body">
+          ${message}
+        </div>
+      `;
+            toastContainer.appendChild(toast);
+            const bsToast = new bootstrap.Toast(toast);
+            bsToast.show();
+
+            toast.addEventListener('hidden.bs.toast', () => {
+                toastContainer.removeChild(toast);
+            });
+        }
+
+        // Función para cargar los detalles del producto
+        function loadProductDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+
+            const product = products.find(p => p.id === productId);
+            if (!product) {
+                window.location.href = 'productos.html';
+                return;
+            }
+
+            // Actualizar breadcrumb
+            document.getElementById('productCategory').textContent = product.categoryName;
+
+            // Actualizar información principal
+            document.getElementById('productName').textContent = product.name;
+            document.getElementById('productPrice').textContent = formatPrice(product.price);
+            document.getElementById('productDescription').textContent = product.description;
+            document.getElementById('mainProductImage').src = product.image;
+
+            // Cargar especificaciones
+            const specsList = document.getElementById('productSpecs');
+            specsList.innerHTML = product.specs.map(spec => `<li>• ${spec}</li>`).join('');
+
+            // Cargar imágenes adicionales
+            const thumbnailBtns = document.querySelectorAll('.thumbnail-btn');
+            product.additionalImages.forEach((img, index) => {
+                if (thumbnailBtns[index]) {
+                    thumbnailBtns[index].querySelector('img').src = img;
+                    thumbnailBtns[index].addEventListener('click', () => {
+                        document.getElementById('mainProductImage').src = img;
+                        thumbnailBtns.forEach(btn => btn.classList.remove('active')); // No funciona
+                        thumbnailBtns[index].classList.add('active');
+                    });
+                }
+            });
+
+            // Cargar productos relacionados
+            const relatedProducts = products
+                .filter(p => p.category === product.category && p.id !== product.id)
+                .slice(0, 4);
+
+            document.getElementById('relatedProducts').innerHTML = relatedProducts.map(p => `
+        <div class="col">
+          <div class="card h-100">
+            <img src="${p.image}" class="card-img-top" alt="${p.name}" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="card-title">${p.name}</h5>
+              <p class="card-text text-primary">${formatPrice(p.price)}</p>
+              <a href="detalles.html?id=${p.id}" class="btn btn-outline-primary w-100">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+            // Configurar controles de cantidad
+            const quantityInput = document.getElementById('quantity');
+            document.getElementById('decreaseQuantity').addEventListener('click', () => {
+                const currentValue = parseInt(quantityInput.value);
+                if (currentValue > 1) {
+                    quantityInput.value = currentValue - 1;
+                }
+            });
+
+            document.getElementById('increaseQuantity').addEventListener('click', () => {
+                quantityInput.value = parseInt(quantityInput.value) + 1;
+            });
+
+            // Configurar botón de agregar al carrito
+            document.getElementById('addToCartBtn').addEventListener('click', () => {
+                const quantity = parseInt(quantityInput.value);
+                addToCart(product, quantity);
+            });
+        }
+
+        // Función para agregar al carrito
+        function addToCart(product, quantity) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingProduct = cart.find(item => item.id === product.id);
+
+            if (existingProduct) {
+                existingProduct.quantity += quantity;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    quantity: quantity,
+                    image: product.image
+                });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartBadge();
+            showNotification(`¡${product.name} agregado al carrito!`, product.image);
+        }
+
+        // Función para actualizar el badge del carrito
+        function updateCartBadge() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const badge = document.getElementById('cartBadge');
+            if (badge) {
+                badge.textContent = totalItems;
+                badge.style.display = totalItems > 0 ? 'inline' : 'none';
+            }
+        }
+
+        // Cargar detalles al iniciar la página
+        document.addEventListener('DOMContentLoaded', function () {
+            loadProductDetails();
+            updateCartBadge();
+        });
+    </script>
+</body>
+
+</html>
