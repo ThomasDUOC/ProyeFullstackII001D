@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,20 +11,25 @@
             transition: transform 0.3s ease;
             height: 100%;
         }
+
         .product-card:hover {
             transform: translateY(-5px);
         }
+
         .product-image {
             height: 200px;
             object-fit: cover;
         }
+
         .category-filter {
             cursor: pointer;
         }
+
         .category-filter.active {
             background-color: #0d6efd;
             color: white;
         }
+
         .cart-badge {
             position: relative;
             top: -10px;
@@ -36,203 +42,211 @@
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-  <div class="container-fluid">
-    <img src="Level-Up-Logo.png" alt="Imagen" width="50" height="40">
-    <a class="navbar-brand" href="#">Level-Up</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="index.html">Home
-            <span class="visually-hidden">(current)</span>
-          </a>
-        <li class="nav-item">
-          <a class="nav-link" href="productos.html">Productos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="nosotros.html">Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Blogs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contactos</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-sm-2" type="search" placeholder="Buscar">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
-      </form>
-      <a href="carrito.html" class="ms-3 position-relative">
-        <img src="carrito.png" alt="Carrito" width="30" height="24">
-        <span id="cartBadge" class="cart-badge">0</span>
-      </a>
-    </div>
-  </div>
-</nav>
-<div class="d-flex justify-content-end me-3 mt-2">
-    <ul class="nav nav-underline">
-    <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="login.html">Iniciar Sesión</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="registro.html">Registrarse</a>
-    </li>
-    </ul>
-</div>
-
-
-<div class="container mt-4">
-    <h2 class="text-center mb-4">Nuestros Productos</h2>
-
-    <!-- Filtros -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="d-flex justify-content-center flex-wrap gap-2">
-                <button class="btn btn-outline-primary category-filter active" data-category="todos">Todos</button>
-                <button class="btn btn-outline-primary category-filter" data-category="juegos-mesa">Juegos de Mesa</button>
-                <button class="btn btn-outline-primary category-filter" data-category="accesorios">Accesorios</button>
-                <button class="btn btn-outline-primary category-filter" data-category="consolas">Consolas</button>
-                <button class="btn btn-outline-primary category-filter" data-category="computadores">Computadores Gamers</button>
-                <button class="btn btn-outline-primary category-filter" data-category="sillas">Sillas Gamers</button>
-                <button class="btn btn-outline-primary category-filter" data-category="mouse">Mouse</button>
-                <button class="btn btn-outline-primary category-filter" data-category="mousepad">Mousepad</button>
-                <button class="btn btn-outline-primary category-filter" data-category="poleras">Poleras Personalizadas</button>
-                <button class="btn btn-outline-primary category-filter" data-category="polerones">Polerones Gamers</button>
+        <div class="container-fluid">
+            <img src="Level-Up-Logo.png" alt="Imagen" width="50" height="40">
+            <a class="navbar-brand" href="#">Level-Up</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home
+                            <span class="visually-hidden">(current)</span>
+                        </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contactos</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-sm-2" type="search" placeholder="Buscar">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+                </form>
+                <a href="carrito.html" class="ms-3 position-relative">
+                    <img src="carrito.png" alt="Carrito" width="30" height="24">
+                    <span id="cartBadge" class="cart-badge">0</span>
+                </a>
             </div>
         </div>
+    </nav>
+    <div class="d-flex justify-content-end me-3 mt-2">
+        <ul class="nav nav-underline">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="login.html">Iniciar Sesión</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="registro.html">Registrarse</a>
+            </li>
+        </ul>
     </div>
 
-    <!-- Grid de productos -->
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" id="productGrid">
-        <!-- Los productos se cargarán dinámicamente con JavaScript -->
-    </div>
-</div>
 
-<!-- Modal de Producto -->
-<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="productModalLabel">Detalles del Producto</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <img src="" alt="" class="img-fluid mb-3" id="modalImage">
-                <h4 id="modalTitle"></h4>
-                <p id="modalDescription"></p>
-                <p class="h5" id="modalPrice"></p>
-                <div class="d-flex align-items-center gap-2">
-                    <label for="quantity">Cantidad:</label>
-                    <input type="number" class="form-control w-25" id="quantity" value="1" min="1">
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Nuestros Productos</h2>
+
+        <!-- Filtros -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="d-flex justify-content-center flex-wrap gap-2">
+                    <button class="btn btn-outline-primary category-filter active" data-category="todos">Todos</button>
+                    <button class="btn btn-outline-primary category-filter" data-category="juegos-mesa">Juegos de
+                        Mesa</button>
+                    <button class="btn btn-outline-primary category-filter"
+                        data-category="accesorios">Accesorios</button>
+                    <button class="btn btn-outline-primary category-filter" data-category="consolas">Consolas</button>
+                    <button class="btn btn-outline-primary category-filter" data-category="computadores">Computadores
+                        Gamers</button>
+                    <button class="btn btn-outline-primary category-filter" data-category="sillas">Sillas
+                        Gamers</button>
+                    <button class="btn btn-outline-primary category-filter" data-category="mouse">Mouse</button>
+                    <button class="btn btn-outline-primary category-filter" data-category="mousepad">Mousepad</button>
+                    <button class="btn btn-outline-primary category-filter" data-category="poleras">Poleras
+                        Personalizadas</button>
+                    <button class="btn btn-outline-primary category-filter" data-category="polerones">Polerones
+                        Gamers</button>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" id="addToCartBtn">Agregar al carrito</button>
+        </div>
+
+        <!-- Grid de productos -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" id="productGrid">
+            <!-- Los productos se cargarán dinámicamente con JavaScript -->
+        </div>
+    </div>
+
+    <!-- Modal de Producto -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Detalles del Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" alt="" class="img-fluid mb-3" id="modalImage">
+                    <h4 id="modalTitle"></h4>
+                    <p id="modalDescription"></p>
+                    <p class="h5" id="modalPrice"></p>
+                    <div class="d-flex align-items-center gap-2">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" class="form-control w-25" id="quantity" value="1" min="1">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="addToCartBtn">Agregar al carrito</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<script src="bootstrap.bundle.min.js"></script>
-<script>
-    // Datos de productos
-    const products = [
-        {
-            id: 'JM001',
-            name: 'Catan',
-            price: 29990,
-            category: 'juegos-mesa',
-            image: 'images/Catan.webp',
-            description: 'Juego de mesa estratégico Catan. Construye, comercia y coloniza la isla.'
-        },
-        {
-            id: 'JM002',
-            name: 'Carcassonne',
-            price: 24990,
-            category: 'juegos-mesa',
-            image: 'images/Carcassonne.jpg',
-            description: 'Juego de mesa medieval Carcassonne. Construye ciudades y caminos.'
-        },
-        {
-            id: 'AC001',
-            name: 'Controlador Inalámbrico Xbox Series X',
-            price: 59990,
-            category: 'accesorios',
-            image: 'images/ControlXboxSeries.webp',
-            description: 'Control oficial para Xbox Series X/S con conexión inalámbrica.'
-        },
-        {
-            id: 'AC002',
-            name: 'Auriculares Gamer HyperX Cloud II',
-            price: 79990,
-            category: 'accesorios',
-            image: 'images/HyperXCloudII.webp',
-            description: 'Auriculares gaming con sonido envolvente 7.1 y micrófono desmontable.'
-        },
-        {
-            id: 'CO001',
-            name: 'PlayStation 5',
-            price: 549990,
-            category: 'consolas',
-            image: 'images/PS5Fisico.webp',
-            description: 'Consola PlayStation 5 con lector de discos. Incluye un control DualSense.'
-        },
-        {
-            id: 'CG001',
-            name: 'PC Gamer ASUS ROG Strix',
-            price: 1299990,
-            category: 'computadores',
-            image: 'image/PrebuiltAsus.png',
-            description: 'PC Gaming de alto rendimiento con RTX 4080, Ryzen 9 y 32GB RAM.'
-        },
-        {
-            id: 'SG001',
-            name: 'Silla Gamer Secretlab Titan',
-            price: 349990,
-            category: 'sillas',
-            image: 'images/SillaSecretlabTitan.jpg',
-            description: 'Silla gaming premium con soporte lumbar ajustable y reposabrazos 4D.'
-        },
-        {
-            id: 'MS001',
-            name: 'Mouse Gamer Logitech G502 HERO',
-            price: 49990,
-            category: 'mouse',
-            image: 'images/MouseLogitech.webp',
-            description: 'Mouse gaming con sensor HERO 25K y pesos ajustables.'
-        },
-        {
-            id: 'MP001',
-            name: 'Mousepad Razer Goliathus Extended Chroma',
-            price: 29990,
-            category: 'mousepad',
-            image: 'images/MousepadRazer.webp',
-            description: 'Mousepad extendido con iluminación RGB personalizable.'
-        },
-        {
-            id: 'PP001',
-            name: 'Polera Gamer Personalizada Level-Up',
-            price: 14990,
-            category: 'poleras',
-            image: 'images/PlaceholderPolera.png',
-            description: 'Polera 100% algodón con diseño gaming personalizado Level-Up.'
+    <script src="bootstrap.bundle.min.js"></script>
+    <script>
+        // Datos de productos
+        const products = [
+            {
+                id: 'JM001',
+                name: 'Catan',
+                price: 29990,
+                category: 'juegos-mesa',
+                image: 'images/Catan.webp',
+                description: 'Juego de mesa estratégico Catan. Construye, comercia y coloniza la isla.'
+            },
+            {
+                id: 'JM002',
+                name: 'Carcassonne',
+                price: 24990,
+                category: 'juegos-mesa',
+                image: 'images/Carcassonne.jpg',
+                description: 'Juego de mesa medieval Carcassonne. Construye ciudades y caminos.'
+            },
+            {
+                id: 'AC001',
+                name: 'Controlador Inalámbrico Xbox Series X',
+                price: 59990,
+                category: 'accesorios',
+                image: 'images/ControlXboxSeries.webp',
+                description: 'Control oficial para Xbox Series X/S con conexión inalámbrica.'
+            },
+            {
+                id: 'AC002',
+                name: 'Auriculares Gamer HyperX Cloud II',
+                price: 79990,
+                category: 'accesorios',
+                image: 'images/HyperXCloudII.webp',
+                description: 'Auriculares gaming con sonido envolvente 7.1 y micrófono desmontable.'
+            },
+            {
+                id: 'CO001',
+                name: 'PlayStation 5',
+                price: 549990,
+                category: 'consolas',
+                image: 'images/PS5Fisico.webp',
+                description: 'Consola PlayStation 5 con lector de discos. Incluye un control DualSense.'
+            },
+            {
+                id: 'CG001',
+                name: 'PC Gamer ASUS ROG Strix',
+                price: 1299990,
+                category: 'computadores',
+                image: 'image/PrebuiltAsus.png',
+                description: 'PC Gaming de alto rendimiento con RTX 4080, Ryzen 9 y 32GB RAM.'
+            },
+            {
+                id: 'SG001',
+                name: 'Silla Gamer Secretlab Titan',
+                price: 349990,
+                category: 'sillas',
+                image: 'images/SillaSecretlabTitan.jpg',
+                description: 'Silla gaming premium con soporte lumbar ajustable y reposabrazos 4D.'
+            },
+            {
+                id: 'MS001',
+                name: 'Mouse Gamer Logitech G502 HERO',
+                price: 49990,
+                category: 'mouse',
+                image: 'images/MouseLogitech.webp',
+                description: 'Mouse gaming con sensor HERO 25K y pesos ajustables.'
+            },
+            {
+                id: 'MP001',
+                name: 'Mousepad Razer Goliathus Extended Chroma',
+                price: 29990,
+                category: 'mousepad',
+                image: 'images/MousepadRazer.webp',
+                description: 'Mousepad extendido con iluminación RGB personalizable.'
+            },
+            {
+                id: 'PP001',
+                name: 'Polera Gamer Personalizada Level-Up',
+                price: 14990,
+                category: 'poleras',
+                image: 'images/PlaceholderPolera.png',
+                description: 'Polera 100% algodón con diseño gaming personalizado Level-Up.'
+            }
+        ];
+
+        // Función para formatear precios en CLP
+        function formatPrice(price) {
+            return '$ ' + price.toLocaleString('es-CL');
         }
-    ];
 
-    // Función para formatear precios en CLP
-    function formatPrice(price) {
-        return '$ ' + price.toLocaleString('es-CL');
-    }
-
-    // Función para crear tarjeta de producto
-    function createProductCard(product) {
-        return `
+        // Función para crear tarjeta de producto
+        function createProductCard(product) {
+            return `
             <div class="col">
                 <div class="card h-100 product-card" data-product-id="${product.id}">
                     <img src="${product.image}" class="card-img-top product-image" alt="${product.name}">
@@ -244,103 +258,104 @@
                 </div>
             </div>
         `;
-    }
+        }
 
-    // Función para mostrar productos
-    function displayProducts(category = 'todos') {
-        const productGrid = document.getElementById('productGrid');
-        const filteredProducts = category === 'todos' 
-            ? products 
-            : products.filter(product => product.category === category);
-        
-        productGrid.innerHTML = filteredProducts.map(createProductCard).join('');
-        
-        // Agregar eventos a los botones de detalles
-        document.querySelectorAll('.view-details').forEach(button => {
-            button.addEventListener('click', function() {
-                const productId = this.closest('.product-card').dataset.productId;
-                const product = products.find(p => p.id === parseInt(productId));
-                showProductModal(product);
-            });
-        });
-    }
+        // Función para mostrar productos
+        function displayProducts(category = 'todos') {
+            const productGrid = document.getElementById('productGrid');
+            const filteredProducts = category === 'todos'
+                ? products
+                : products.filter(product => product.category === category);
 
-    // Función para mostrar modal de producto
-    function showProductModal(product) {
-        const modal = new bootstrap.Modal(document.getElementById('productModal'));
-        document.getElementById('modalImage').src = product.image;
-        document.getElementById('modalTitle').textContent = product.name;
-        document.getElementById('modalDescription').textContent = product.description;
-        document.getElementById('modalPrice').textContent = formatPrice(product.price);
-        document.getElementById('quantity').value = 1;
-        
-        document.getElementById('addToCartBtn').onclick = function() {
-            const quantity = parseInt(document.getElementById('quantity').value);
-            addToCart(product, quantity);
-            modal.hide();
-        };
-        
-        modal.show();
-    }
+            productGrid.innerHTML = filteredProducts.map(createProductCard).join('');
 
-    // Función para agregar al carrito
-    function addToCart(product, quantity) {
-        // Obtener el carrito actual del localStorage
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        
-        // Buscar si el producto ya está en el carrito
-        const existingProduct = cart.find(item => item.id === product.id);
-        
-        if (existingProduct) {
-            existingProduct.quantity += quantity;
-        } else {
-            cart.push({
-                id: product.id,
-                name: product.name,
-                price: product.price,
-                quantity: quantity,
-                image: product.image
+            // Agregar eventos a los botones de detalles
+            document.querySelectorAll('.view-details').forEach(button => {
+                button.addEventListener('click', function () {
+                    const productId = this.closest('.product-card').dataset.productId;
+                    const product = products.find(p => p.id === parseInt(productId));
+                    showProductModal(product);
+                });
             });
         }
-        
-        // Guardar el carrito actualizado
-        localStorage.setItem('cart', JSON.stringify(cart));
-        
-        // Mostrar mensaje de éxito
-        alert('Producto agregado al carrito');
-        
-        // Actualizar el contador del carrito
-        updateCartBadge();
-    }
 
-    // Función para actualizar el badge del carrito
-    function updateCartBadge() {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        const badge = document.getElementById('cartBadge');
-        if (badge) {
-            badge.textContent = totalItems;
-            badge.style.display = totalItems > 0 ? 'inline' : 'none';
+        // Función para mostrar modal de producto
+        function showProductModal(product) {
+            const modal = new bootstrap.Modal(document.getElementById('productModal'));
+            document.getElementById('modalImage').src = product.image;
+            document.getElementById('modalTitle').textContent = product.name;
+            document.getElementById('modalDescription').textContent = product.description;
+            document.getElementById('modalPrice').textContent = formatPrice(product.price);
+            document.getElementById('quantity').value = 1;
+
+            document.getElementById('addToCartBtn').onclick = function () {
+                const quantity = parseInt(document.getElementById('quantity').value);
+                addToCart(product, quantity);
+                modal.hide();
+            };
+
+            modal.show();
         }
-    }
 
-    // Event Listeners
-    document.addEventListener('DOMContentLoaded', function() {
-        // Mostrar todos los productos inicialmente
-        displayProducts();
-        
-        // Configurar filtros de categoría
-        document.querySelectorAll('.category-filter').forEach(button => {
-            button.addEventListener('click', function() {
-                document.querySelectorAll('.category-filter').forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-                displayProducts(this.dataset.category);
+        // Función para agregar al carrito
+        function addToCart(product, quantity) {
+            // Obtener el carrito actual del localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Buscar si el producto ya está en el carrito
+            const existingProduct = cart.find(item => item.id === product.id);
+
+            if (existingProduct) {
+                existingProduct.quantity += quantity;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    quantity: quantity,
+                    image: product.image
+                });
+            }
+
+            // Guardar el carrito actualizado
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Mostrar mensaje de éxito
+            alert('Producto agregado al carrito');
+
+            // Actualizar el contador del carrito
+            updateCartBadge();
+        }
+
+        // Función para actualizar el badge del carrito
+        function updateCartBadge() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const badge = document.getElementById('cartBadge');
+            if (badge) {
+                badge.textContent = totalItems;
+                badge.style.display = totalItems > 0 ? 'inline' : 'none';
+            }
+        }
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mostrar todos los productos inicialmente
+            displayProducts();
+
+            // Configurar filtros de categoría
+            document.querySelectorAll('.category-filter').forEach(button => {
+                button.addEventListener('click', function () {
+                    document.querySelectorAll('.category-filter').forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    displayProducts(this.dataset.category);
+                });
             });
+
+            // Actualizar badge del carrito al cargar
+            updateCartBadge();
         });
-        
-        // Actualizar badge del carrito al cargar
-        updateCartBadge();
-    });
-</script>
+    </script>
 </body>
+
 </html>
