@@ -1,343 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <style>
-        .error-message {
-            color: #dc3545;
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-            display: none;
-        }
-        .success-message {
-            color: #198754;
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-            display: none;
-        }
-        .is-invalid {
-            border-color: #dc3545 !important;
-        }
-        .is-valid {
-            border-color: #198754 !important;
-        }
-        .form-container {
-            max-width: 600px;
-            margin: 2rem auto;
-            padding: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <style>
+    .error-message {
+      color: #dc3545;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      display: none;
+    }
+
+    .success-message {
+      color: #198754;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      display: none;
+    }
+
+    .is-invalid {
+      border-color: #dc3545 !important;
+    }
+
+    .is-valid {
+      border-color: #198754 !important;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 20px;
+    }
+  </style>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-  <div class="container-fluid">
-    <img src="Level-Up-Logo.png" alt="Imagen" width="50" height="40">
-    <a class="navbar-brand" href="#">Level-Up</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="index.html">Home
-            <span class="visually-hidden">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Productos</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Blogs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contactos</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-sm-2" type="search" placeholder="Buscar">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
-      </form>
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <img src="Level-Up-Logo.png" alt="Imagen" width="50" height="40">
+      <a class="navbar-brand" href="#">Level-Up</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">
+              Home
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="productos.html">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="nosotros.html">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blogs.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contactos</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-sm-2" type="search" placeholder="Buscar">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<div class="d-flex justify-content-center align-items-center">
-  <form id="registroForm" class="form-container" style="color: #ea39b8;">
-    <fieldset>
+  <div class="d-flex justify-content-center align-items-center">
+    <form id="registroForm" class="form-container" style="color: #ea39b8;">
+      <fieldset>
         <div class="d-flex justify-content-end">
-            <a href="index.html" class="btn btn-primary">X</a>
+          <a href="index.html" class="btn btn-primary">X</a>
         </div>
-      <legend class="text-center">Registro de usuario</legend>
+        <legend class="text-center">Registro de usuario</legend>
         <div class="mb-3">
-            <label class="form-label" for="nombreInput">Nombre Completo</label>
-            <input class="form-control" id="nombreInput" type="text" placeholder="Ingrese su nombre completo..." required>
-            <div id="nombreError" class="error-message">El nombre debe contener al menos 3 carácteres y solo letras.</div>
-            <div id="nombreSuccess" class="success-message">¡Nombre válido!</div>
-        </div>
-      <div class="mb-3">
-        <label for="emailInput" class="form-label">Correo</label>
-        <input type="email" class="form-control" id="emailInput" placeholder="Ingrese su correo" required>
-        <div id="emailError" class="error-message">Por favor, ingrese un correo electrónico válido.</div>
-        <div id="emailSuccess" class="success-message">¡Correo electrónico válido!</div>
-        <small class="form-text text-muted">Nunca compartiremos tu correo electrónico con nadie más.</small>
-      </div>
-      <div class="mb-3">
-        <label for="passwordInput" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="passwordInput" placeholder="Contraseña" required autocomplete="off">
-        <div id="passwordError" class="error-message">La contraseña debe tener al menos 8 caracteres, incluir una mayúscula, un número y un carácter especial.</div>
-        <div id="passwordSuccess" class="success-message">¡Contraseña válida!</div>
-      </div>
-      <div class="mb-3">
-        <label for="confirmPasswordInput" class="form-label">Confirme Contraseña</label>
-        <input type="password" class="form-control" id="confirmPasswordInput" placeholder="Confirme Contraseña" required autocomplete="off">
-        <div id="confirmPasswordError" class="error-message">Las contraseñas no coinciden.</div>
-        <div id="confirmPasswordSuccess" class="success-message">¡Las contraseñas coinciden!</div>
-      </div>
-        <div class="mb-3">
-            <label for="regionSelect" class="form-label">Seleccione región</label>
-            <select class="form-select" id="regionSelect" required>
-                <option value="">Seleccione una región</option>
-                <option value="1">Región Metropolitana</option>
-                <option value="2">Valparaíso</option>
-                <option value="3">Biobío</option>
-                <option value="4">La Araucanía</option>
-                <option value="5">Los Lagos</option>
-            </select>
-            <div id="regionError" class="error-message">Por favor, seleccione una región.</div>
-            <div id="regionSuccess" class="success-message">¡Región seleccionada!</div>
+          <label class="form-label" for="nombreInput">Nombre Completo</label>
+          <input class="form-control" id="nombreInput" type="text" placeholder="Ingrese su nombre completo..." required>
+          <div id="nombreError" class="error-message">El nombre debe contener al menos 3 carácteres y solo letras.</div>
+          <div id="nombreSuccess" class="success-message">¡Nombre válido!</div>
         </div>
         <div class="mb-3">
-            <label for="comunaSelect" class="form-label">Seleccione comuna</label>
-            <select class="form-select" id="comunaSelect" required>
-                <option value="">Seleccione una comuna</option>
-                <option value="1">Santiago</option>
-                <option value="2">Providencia</option>
-                <option value="3">Las Condes</option>
-                <option value="4">Ñuñoa</option>
-                <option value="5">La Florida</option>
-            </select>
-            <div id="comunaError" class="error-message">Por favor, seleccione una comuna.</div>
-            <div id="comunaSuccess" class="success-message">¡Comuna seleccionada!</div>
+          <label for="emailInput" class="form-label">Correo</label>
+          <input type="email" class="form-control" id="emailInput" placeholder="Ingrese su correo" required>
+          <div id="emailError" class="error-message">Por favor, ingrese un correo electrónico válido.</div>
+          <div id="emailSuccess" class="success-message">¡Correo electrónico válido!</div>
+          <small class="form-text text-muted">Nunca compartiremos tu correo electrónico con nadie más.</small>
         </div>
-      <button type="submit" class="btn btn-primary w-100 mt-4" id="submitButton" disabled>Registrar</button>
-    </fieldset>
-  </form>
-</div>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('registroForm');
-        const nombreInput = document.getElementById('nombreInput');
-        const emailInput = document.getElementById('emailInput');
-        const passwordInput = document.getElementById('passwordInput');
-        const confirmPasswordInput = document.getElementById('confirmPasswordInput');
-        const regionSelect = document.getElementById('regionSelect');
-        const comunaSelect = document.getElementById('comunaSelect');
-        const submitButton = document.getElementById('submitButton');
+        <div class="mb-3">
+          <label for="passwordInput" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="passwordInput" placeholder="Contraseña" required
+            autocomplete="off">
+          <div id="passwordError" class="error-message">La contraseña debe tener al menos 8 caracteres, incluir una
+            mayúscula, un número y un carácter especial.</div>
+          <div id="passwordSuccess" class="success-message">¡Contraseña válida!</div>
+        </div>
+        <div class="mb-3">
+          <label for="confirmPasswordInput" class="form-label">Confirme Contraseña</label>
+          <input type="password" class="form-control" id="confirmPasswordInput" placeholder="Confirme Contraseña"
+            required autocomplete="off">
+          <div id="confirmPasswordError" class="error-message">Las contraseñas no coinciden.</div>
+          <div id="confirmPasswordSuccess" class="success-message">¡Las contraseñas coinciden!</div>
+        </div>
+        <div class="mb-3">
+          <label for="regionSelect" class="form-label">Seleccione región</label>
+          <select class="form-select" id="regionSelect" required>
+            <option value="">Seleccione una región</option>
+            <option value="1">Región Metropolitana</option>
+            <option value="2">Valparaíso</option>
+            <option value="3">Biobío</option>
+            <option value="4">La Araucanía</option>
+            <option value="5">Los Lagos</option>
+          </select>
+          <div id="regionError" class="error-message">Por favor, seleccione una región.</div>
+          <div id="regionSuccess" class="success-message">¡Región seleccionada!</div>
+        </div>
+        <div class="mb-3">
+          <label for="comunaSelect" class="form-label">Seleccione comuna</label>
+          <select class="form-select" id="comunaSelect" required>
+            <option value="">Seleccione una comuna</option>
+            <option value="1">Santiago</option>
+            <option value="2">Providencia</option>
+            <option value="3">Las Condes</option>
+            <option value="4">Ñuñoa</option>
+            <option value="5">La Florida</option>
+          </select>
+          <div id="comunaError" class="error-message">Por favor, seleccione una comuna.</div>
+          <div id="comunaSuccess" class="success-message">¡Comuna seleccionada!</div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 mt-4" id="submitButton" disabled>Registrar</button>
+      </fieldset>
+    </form>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('registroForm');
+      const nombreInput = document.getElementById('nombreInput');
+      const emailInput = document.getElementById('emailInput');
+      const passwordInput = document.getElementById('passwordInput');
+      const confirmPasswordInput = document.getElementById('confirmPasswordInput');
+      const regionSelect = document.getElementById('regionSelect');
+      const comunaSelect = document.getElementById('comunaSelect');
+      const submitButton = document.getElementById('submitButton');
 
-        let isNombreValid = false;
-        let isEmailValid = false;
-        let isPasswordValid = false;
-        let isConfirmPasswordValid = false;
-        let isRegionValid = false;
-        let isComunaValid = false;
+      let isNombreValid = false;
+      let isEmailValid = false;
+      let isPasswordValid = false;
+      let isConfirmPasswordValid = false;
+      let isRegionValid = false;
+      let isComunaValid = false;
 
-        // Función para validar nombre
-        function validateNombre(nombre) {
-            const nombreRegex = /^[A-Za-zÁáÉéÍíÓóÚúÜüÑñ\s]{3,}$/;
-            return nombreRegex.test(nombre);
+      // Función para validar nombre
+      function validateNombre(nombre) {
+        const nombreRegex = /^[A-Za-zÁáÉéÍíÓóÚúÜüÑñ\s]{3,}$/;
+        return nombreRegex.test(nombre);
+      }
+
+      // Función para validar email
+      function validateEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+
+      // Función para validar contraseña
+      function validatePassword(password) {
+        const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+        return passwordRegex.test(password);
+      }
+
+      // Función para actualizar el estado del botón
+      function updateSubmitButton() {
+        submitButton.disabled = !(isNombreValid && isEmailValid && isPasswordValid &&
+          isConfirmPasswordValid && isRegionValid && isComunaValid);
+      }
+
+      // Validación del nombre
+      nombreInput.addEventListener('input', function () {
+        const nombreValue = this.value.trim();
+        const nombreError = document.getElementById('nombreError');
+        const nombreSuccess = document.getElementById('nombreSuccess');
+
+        if (nombreValue === '') {
+          this.classList.remove('is-valid', 'is-invalid');
+          nombreError.style.display = 'none';
+          nombreSuccess.style.display = 'none';
+          isNombreValid = false;
+        } else if (validateNombre(nombreValue)) {
+          this.classList.remove('is-invalid');
+          this.classList.add('is-valid');
+          nombreError.style.display = 'none';
+          nombreSuccess.style.display = 'block';
+          isNombreValid = true;
+        } else {
+          this.classList.remove('is-valid');
+          this.classList.add('is-invalid');
+          nombreError.style.display = 'block';
+          nombreSuccess.style.display = 'none';
+          isNombreValid = false;
         }
+        updateSubmitButton();
+      });
 
-        // Función para validar email
-        function validateEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
+      // Validación del email
+      emailInput.addEventListener('input', function () {
+        const emailValue = this.value.trim();
+        const emailError = document.getElementById('emailError');
+        const emailSuccess = document.getElementById('emailSuccess');
+
+        if (emailValue === '') {
+          this.classList.remove('is-valid', 'is-invalid');
+          emailError.style.display = 'none';
+          emailSuccess.style.display = 'none';
+          isEmailValid = false;
+        } else if (validateEmail(emailValue)) {
+          this.classList.remove('is-invalid');
+          this.classList.add('is-valid');
+          emailError.style.display = 'none';
+          emailSuccess.style.display = 'block';
+          isEmailValid = true;
+        } else {
+          this.classList.remove('is-valid');
+          this.classList.add('is-invalid');
+          emailError.style.display = 'block';
+          emailSuccess.style.display = 'none';
+          isEmailValid = false;
         }
+        updateSubmitButton();
+      });
 
-        // Función para validar contraseña
-        function validatePassword(password) {
-            const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
-            return passwordRegex.test(password);
+      // Validación de la contraseña
+      passwordInput.addEventListener('input', function () {
+        const passwordValue = this.value.trim();
+        const passwordError = document.getElementById('passwordError');
+        const passwordSuccess = document.getElementById('passwordSuccess');
+
+        if (passwordValue === '') {
+          this.classList.remove('is-valid', 'is-invalid');
+          passwordError.style.display = 'none';
+          passwordSuccess.style.display = 'none';
+          isPasswordValid = false;
+        } else if (validatePassword(passwordValue)) {
+          this.classList.remove('is-invalid');
+          this.classList.add('is-valid');
+          passwordError.style.display = 'none';
+          passwordSuccess.style.display = 'block';
+          isPasswordValid = true;
+        } else {
+          this.classList.remove('is-valid');
+          this.classList.add('is-invalid');
+          passwordError.style.display = 'block';
+          passwordSuccess.style.display = 'none';
+          isPasswordValid = false;
         }
+        // Revalidar confirmación de contraseña
+        confirmPasswordInput.dispatchEvent(new Event('input'));
+        updateSubmitButton();
+      });
 
-        // Función para actualizar el estado del botón
-        function updateSubmitButton() {
-            submitButton.disabled = !(isNombreValid && isEmailValid && isPasswordValid && 
-                                   isConfirmPasswordValid && isRegionValid && isComunaValid);
+      // Validación de la confirmación de contraseña
+      confirmPasswordInput.addEventListener('input', function () {
+        const confirmValue = this.value.trim();
+        const confirmError = document.getElementById('confirmPasswordError');
+        const confirmSuccess = document.getElementById('confirmPasswordSuccess');
+
+        if (confirmValue === '') {
+          this.classList.remove('is-valid', 'is-invalid');
+          confirmError.style.display = 'none';
+          confirmSuccess.style.display = 'none';
+          isConfirmPasswordValid = false;
+        } else if (confirmValue === passwordInput.value.trim()) {
+          this.classList.remove('is-invalid');
+          this.classList.add('is-valid');
+          confirmError.style.display = 'none';
+          confirmSuccess.style.display = 'block';
+          isConfirmPasswordValid = true;
+        } else {
+          this.classList.remove('is-valid');
+          this.classList.add('is-invalid');
+          confirmError.style.display = 'block';
+          confirmSuccess.style.display = 'none';
+          isConfirmPasswordValid = false;
         }
+        updateSubmitButton();
+      });
 
-        // Validación del nombre
-        nombreInput.addEventListener('input', function() {
-            const nombreValue = this.value.trim();
-            const nombreError = document.getElementById('nombreError');
-            const nombreSuccess = document.getElementById('nombreSuccess');
+      // Validación de la región
+      regionSelect.addEventListener('change', function () {
+        const regionError = document.getElementById('regionError');
+        const regionSuccess = document.getElementById('regionSuccess');
 
-            if (nombreValue === '') {
-                this.classList.remove('is-valid', 'is-invalid');
-                nombreError.style.display = 'none';
-                nombreSuccess.style.display = 'none';
-                isNombreValid = false;
-            } else if (validateNombre(nombreValue)) {
-                this.classList.remove('is-invalid');
-                this.classList.add('is-valid');
-                nombreError.style.display = 'none';
-                nombreSuccess.style.display = 'block';
-                isNombreValid = true;
-            } else {
-                this.classList.remove('is-valid');
-                this.classList.add('is-invalid');
-                nombreError.style.display = 'block';
-                nombreSuccess.style.display = 'none';
-                isNombreValid = false;
-            }
-            updateSubmitButton();
-        });
+        if (this.value === '') {
+          this.classList.remove('is-valid', 'is-invalid');
+          regionError.style.display = 'block';
+          regionSuccess.style.display = 'none';
+          isRegionValid = false;
+        } else {
+          this.classList.remove('is-invalid');
+          this.classList.add('is-valid');
+          regionError.style.display = 'none';
+          regionSuccess.style.display = 'block';
+          isRegionValid = true;
+        }
+        updateSubmitButton();
+      });
 
-        // Validación del email
-        emailInput.addEventListener('input', function() {
-            const emailValue = this.value.trim();
-            const emailError = document.getElementById('emailError');
-            const emailSuccess = document.getElementById('emailSuccess');
+      // Validación de la comuna
+      comunaSelect.addEventListener('change', function () {
+        const comunaError = document.getElementById('comunaError');
+        const comunaSuccess = document.getElementById('comunaSuccess');
 
-            if (emailValue === '') {
-                this.classList.remove('is-valid', 'is-invalid');
-                emailError.style.display = 'none';
-                emailSuccess.style.display = 'none';
-                isEmailValid = false;
-            } else if (validateEmail(emailValue)) {
-                this.classList.remove('is-invalid');
-                this.classList.add('is-valid');
-                emailError.style.display = 'none';
-                emailSuccess.style.display = 'block';
-                isEmailValid = true;
-            } else {
-                this.classList.remove('is-valid');
-                this.classList.add('is-invalid');
-                emailError.style.display = 'block';
-                emailSuccess.style.display = 'none';
-                isEmailValid = false;
-            }
-            updateSubmitButton();
-        });
+        if (this.value === '') {
+          this.classList.remove('is-valid', 'is-invalid');
+          comunaError.style.display = 'block';
+          comunaSuccess.style.display = 'none';
+          isComunaValid = false;
+        } else {
+          this.classList.remove('is-invalid');
+          this.classList.add('is-valid');
+          comunaError.style.display = 'none';
+          comunaSuccess.style.display = 'block';
+          isComunaValid = true;
+        }
+        updateSubmitButton();
+      });
 
-        // Validación de la contraseña
-        passwordInput.addEventListener('input', function() {
-            const passwordValue = this.value.trim();
-            const passwordError = document.getElementById('passwordError');
-            const passwordSuccess = document.getElementById('passwordSuccess');
-
-            if (passwordValue === '') {
-                this.classList.remove('is-valid', 'is-invalid');
-                passwordError.style.display = 'none';
-                passwordSuccess.style.display = 'none';
-                isPasswordValid = false;
-            } else if (validatePassword(passwordValue)) {
-                this.classList.remove('is-invalid');
-                this.classList.add('is-valid');
-                passwordError.style.display = 'none';
-                passwordSuccess.style.display = 'block';
-                isPasswordValid = true;
-            } else {
-                this.classList.remove('is-valid');
-                this.classList.add('is-invalid');
-                passwordError.style.display = 'block';
-                passwordSuccess.style.display = 'none';
-                isPasswordValid = false;
-            }
-            // Revalidar confirmación de contraseña
-            confirmPasswordInput.dispatchEvent(new Event('input'));
-            updateSubmitButton();
-        });
-
-        // Validación de la confirmación de contraseña
-        confirmPasswordInput.addEventListener('input', function() {
-            const confirmValue = this.value.trim();
-            const confirmError = document.getElementById('confirmPasswordError');
-            const confirmSuccess = document.getElementById('confirmPasswordSuccess');
-
-            if (confirmValue === '') {
-                this.classList.remove('is-valid', 'is-invalid');
-                confirmError.style.display = 'none';
-                confirmSuccess.style.display = 'none';
-                isConfirmPasswordValid = false;
-            } else if (confirmValue === passwordInput.value.trim()) {
-                this.classList.remove('is-invalid');
-                this.classList.add('is-valid');
-                confirmError.style.display = 'none';
-                confirmSuccess.style.display = 'block';
-                isConfirmPasswordValid = true;
-            } else {
-                this.classList.remove('is-valid');
-                this.classList.add('is-invalid');
-                confirmError.style.display = 'block';
-                confirmSuccess.style.display = 'none';
-                isConfirmPasswordValid = false;
-            }
-            updateSubmitButton();
-        });
-
-        // Validación de la región
-        regionSelect.addEventListener('change', function() {
-            const regionError = document.getElementById('regionError');
-            const regionSuccess = document.getElementById('regionSuccess');
-
-            if (this.value === '') {
-                this.classList.remove('is-valid', 'is-invalid');
-                regionError.style.display = 'block';
-                regionSuccess.style.display = 'none';
-                isRegionValid = false;
-            } else {
-                this.classList.remove('is-invalid');
-                this.classList.add('is-valid');
-                regionError.style.display = 'none';
-                regionSuccess.style.display = 'block';
-                isRegionValid = true;
-            }
-            updateSubmitButton();
-        });
-
-        // Validación de la comuna
-        comunaSelect.addEventListener('change', function() {
-            const comunaError = document.getElementById('comunaError');
-            const comunaSuccess = document.getElementById('comunaSuccess');
-
-            if (this.value === '') {
-                this.classList.remove('is-valid', 'is-invalid');
-                comunaError.style.display = 'block';
-                comunaSuccess.style.display = 'none';
-                isComunaValid = false;
-            } else {
-                this.classList.remove('is-invalid');
-                this.classList.add('is-valid');
-                comunaError.style.display = 'none';
-                comunaSuccess.style.display = 'block';
-                isComunaValid = true;
-            }
-            updateSubmitButton();
-        });
-
-        // Manejo del envío del formulario
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            if (isNombreValid && isEmailValid && isPasswordValid && 
-                isConfirmPasswordValid && isRegionValid && isComunaValid) {
-                // Aquí puedes agregar la lógica para enviar el formulario
-                window.location.href = 'index.html';
-            }
-        });
+      // Manejo del envío del formulario
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (isNombreValid && isEmailValid && isPasswordValid &&
+          isConfirmPasswordValid && isRegionValid && isComunaValid) {
+          // Aquí puedes agregar la lógica para enviar el formulario
+          window.location.href = 'index.html';
+        }
+      });
     });
-</script>
+  </script>
 </body>
+
 </html>
